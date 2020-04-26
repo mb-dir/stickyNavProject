@@ -13,8 +13,13 @@ body {
 }
 .hero img { max-width: 500px; width: 100%; }
 .navbar {
-  height: 60px;
   background: #111;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top:0;
+  min-height: 50px;
+
 }
 .navbar__menu {
   margin: 0;
@@ -26,8 +31,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  justify-content: center;
+  display: none;
 }
 .navbar__menu a {
   display: block;
@@ -35,16 +39,48 @@ body {
   padding: 0 20px;
   color: #fff;
   text-decoration: none;
+  text-align: center;
 }
 
 .navbar__menu a:hover {
   background: #333;
 }
-
+.hamburger{
+  height: 45px;
+  width: 45px;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+}
+.hamburger:hover{
+  cursor: pointer;
+}
+.hamburger__line{
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 8px;
+}
 .content {
   margin: 0 auto;
   width: 75%;
   max-width: 728px;
   padding-top: 50px;
   margin-bottom: 50px;
+}
+
+
+.open{
+  display: block !important;/*Wiem że important to zła praktyka, ale architektura styli pobranych z repo(stylowanie po znacznikach) sprawia, że nie chce mi się tego zmieniać*/
+}
+
+
+
+@media(min-width: 724px){
+  .hamburger{
+    display: none;
+  }
+  .navbar__menu ul {
+    display: flex;
+  }
 }
