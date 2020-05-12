@@ -1,6 +1,5 @@
 const hamburger = document.querySelector('.hamburger');
-
+const navbarUl = document.querySelector('.navbar ul');
 hamburger.addEventListener('click', ()=>{
-    const navbarUl = document.querySelector('.navbar ul');
     navbarUl.classList.toggle('open');
 });
